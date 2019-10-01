@@ -1,4 +1,4 @@
-package Strategy;
+package StrategyImposto;
 
 public class Orcamento {
 
