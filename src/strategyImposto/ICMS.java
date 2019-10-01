@@ -1,4 +1,4 @@
-package StrategyImposto;
+package strategyImposto;
 public class ICMS implements Imposto{
 	@Override
 	public double calcula(Orcamento orcamento) {

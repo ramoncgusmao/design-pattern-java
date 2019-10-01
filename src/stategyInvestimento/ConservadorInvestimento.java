@@ -1,4 +1,4 @@
-package StategyInvestimento;
+package stategyInvestimento;
 
 public class ConservadorInvestimento implements Investimento{
 

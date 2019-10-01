@@ -1,4 +1,4 @@
-package StrategyImposto;
+package strategyImposto;
 public class CalculadorDeImpostos {
 
 	public void realizaCalculo(Orcamento orcamento, Imposto qualquerImposto) {
