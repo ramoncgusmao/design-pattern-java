@@ -9,11 +9,11 @@ public class TesteICCC {
 		Orcamento orc2 = new Orcamento(2000);
 		Orcamento orc3 = new Orcamento(4000);
 		
-		CalculadorDeImpostos calc = new CalculadorDeImpostos();
+		//CalculadorDeImpostos calc = new CalculadorDeImpostos();
 
-		calc.realizaCalculo(orc, iccc);
-		calc.realizaCalculo(orc2, iccc);
-		calc.realizaCalculo(orc3, iccc);
+		CalculadorDeImpostos.realizaCalculo(orc, iccc);
+		CalculadorDeImpostos.realizaCalculo(orc2, iccc);
+		CalculadorDeImpostos.realizaCalculo(orc3, iccc);
 
 	}
 }

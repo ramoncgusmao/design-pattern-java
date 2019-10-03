@@ -8,10 +8,10 @@ public class TesteDeImposto {
 		Imposto icms = new ICMS();
 		Orcamento orcamento = new Orcamento(500.0);
 		
-		CalculadorDeImpostos calc = new CalculadorDeImpostos();
+	//	CalculadorDeImpostos calc = new CalculadorDeImpostos();
 		
-		calc.realizaCalculo(orcamento, icms);
-		calc.realizaCalculo(orcamento, iss);
+		CalculadorDeImpostos.realizaCalculo(orcamento, icms);
+		CalculadorDeImpostos.realizaCalculo(orcamento, iss);
 	}
 
 }
