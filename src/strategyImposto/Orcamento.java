@@ -27,6 +27,12 @@ public class Orcamento {
 	public void adicionaItem(Item item) {
 		itens.add(item);
 	}
-	
-	
+
+	public boolean contemItemDeNome(String nomeDoItem) {
+		for (Item item : itens) {
+			if (item.getNome().equals(nomeDoItem))
+				return true;
+		}
+		return false;
+	}
 }

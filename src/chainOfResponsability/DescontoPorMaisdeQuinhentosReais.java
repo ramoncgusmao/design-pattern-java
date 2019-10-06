@@ -9,6 +9,7 @@ public class DescontoPorMaisdeQuinhentosReais implements Desconto {
 	@Override
 	public double desconto(Orcamento orcamento) {
 		if (orcamento.getValor() > 500) {
+			System.out.println("500 -");
 			return orcamento.getValor() * 0.07;
 		}
 		
