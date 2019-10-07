@@ -1,6 +1,6 @@
 package strategyImposto;
 
-public class ICCC implements Imposto{
+public class ICCC extends Imposto{
 
 	@Override
 	public double calcula(Orcamento orcamento) {
@@ -8,11 +8,11 @@ public class ICCC implements Imposto{
 		double valor = orcamento.getValor();
 		
 		if(valor < 1000.0) {
-			return expressao(valor, 0.05, 0);  
+			return expressao(valor, 0.05, 0) + calculoDoOutroImposto(orcamento);  
 		}else if(valor < 3000.0) {
-			return expressao(valor, 0.07, 0);			
+			return expressao(valor, 0.07, 0)  + calculoDoOutroImposto(orcamento);			
 		}else if(valor > 3000.0){
-			return expressao(valor, 0.08, 30);
+			return expressao(valor, 0.08, 30)  + calculoDoOutroImposto(orcamento);
 		}
 			
 		return 0;

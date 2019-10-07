@@ -1,11 +1,19 @@
 package templateMethod;
 
 
+import strategyImposto.Imposto;
 import strategyImposto.Orcamento;
 
 public class IKCV extends TemplateDeImpostoCondicional {
 
+	public IKCV() {
+		super();// TODO Auto-generated constructor stub
+	}
 
+	public IKCV(Imposto outroImposto) {
+		super(outroImposto);
+	}
+	
 	private boolean temItemMaiorQue100(Orcamento orcamento) {
 
 		return orcamento.getItens().stream().anyMatch(p -> p.getValor() > 100);
