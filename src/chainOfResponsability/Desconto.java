@@ -1,6 +1,6 @@
 package chainOfResponsability;
 
-import strategyImposto.Orcamento;
+import state.Orcamento;
 
 public interface Desconto {
 

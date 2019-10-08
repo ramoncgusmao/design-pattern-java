@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import chainOfResponsability.Item;
+import state.Orcamento;
 import strategyImposto.Imposto;
-import strategyImposto.Orcamento;
 
 public class IHIT extends TemplateDeImpostoCondicional{
 

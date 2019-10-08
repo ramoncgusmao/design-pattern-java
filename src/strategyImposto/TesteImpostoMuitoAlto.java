@@ -1,5 +1,7 @@
 package strategyImposto;
 
+import state.Orcamento;
+
 public class TesteImpostoMuitoAlto {
 
 	public static void main(String[] args) {

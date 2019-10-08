@@ -1,5 +1,7 @@
 package strategyImposto;
 
+import state.Orcamento;
+
 public abstract class Imposto {
 
 	protected final Imposto outroImposto;

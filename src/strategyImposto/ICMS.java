@@ -1,4 +1,7 @@
 package strategyImposto;
+
+import state.Orcamento;
+
 public class ICMS extends Imposto{
 	
 	public ICMS(Imposto outroImposto) {

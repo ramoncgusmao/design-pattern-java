@@ -1,5 +1,7 @@
 package strategyImposto;
 
+import state.Orcamento;
+
 public class ImpostoMuitoAlto extends Imposto {
 
 	public ImpostoMuitoAlto(Imposto imposto) {

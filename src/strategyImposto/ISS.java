@@ -1,5 +1,7 @@
 package strategyImposto;
 
+import state.Orcamento;
+
 public class ISS extends Imposto {
 	
 	public ISS(Imposto outroImposto) {

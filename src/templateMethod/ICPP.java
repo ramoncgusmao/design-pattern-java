@@ -1,7 +1,7 @@
 package templateMethod;
 
+import state.Orcamento;
 import strategyImposto.Imposto;
-import strategyImposto.Orcamento;
 
 public class ICPP extends TemplateDeImpostoCondicional {
 

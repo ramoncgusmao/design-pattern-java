@@ -1,4 +1,4 @@
-package strategyImposto;
+package state;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -8,12 +8,15 @@ import chainOfResponsability.Item;
 
 public class Orcamento {
 
-	private double valor;
+	protected double valor;
 	private List<Item> itens;
+
+	protected EstadoDoOrcamento estado;
 
 	public Orcamento(double valor) {
 		this.valor = valor;
 		this.itens = new ArrayList<>();
+		this.estado = new OrcamentoEmAprovacao();
 	}
 
 	public double getValor() {
@@ -34,5 +37,21 @@ public class Orcamento {
 				return true;
 		}
 		return false;
+	}
+
+	public void aplicaDescontoExtra() {
+		estado.aplicaDesconto(this);
+	}
+
+	public void aprova() {
+		estado.aprova(this);
+	}
+
+	public void reprova() {
+		estado.reprova(this);
+	}
+
+	public void finaliza() {
+		estado.finaliza(this);
 	}
 }
