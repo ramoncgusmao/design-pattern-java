@@ -1,5 +1,8 @@
 package stategyInvestimento;
 
+import stateConta.StatusDaConta;
+import stateConta.StatusPositivo;
+
 public class Conta {
 
 	
@@ -9,8 +12,10 @@ public class Conta {
 	private String conta;
 	private double valor;
 
+	private StatusDaConta status;
+	
 	public Conta() {
-		// TODO Auto-generated constructor stub
+		setStatus(new StatusPositivo());
 	}
 	
 	public Conta(String nome,String agencia, String conta, Double valor) {
@@ -18,6 +23,7 @@ public class Conta {
 		this.agencia = agencia;
 		this.conta = conta;
 		this.valor = valor;
+		setStatus(new StatusPositivo());
 		// TODO Auto-generated constructor stub
 	}
 
@@ -53,7 +59,21 @@ public class Conta {
 		this.conta = conta;
 	}
 
+	public StatusDaConta getStatus() {
+		return status;
+	}
 
-	
+	public void setStatus(StatusDaConta status) {
+		this.status = status;
+	}
+
+
+	 public void saca(double valor) {
+		 status.sacar(this, valor);
+	    }
+
+	    public void deposita(double valor) {
+	    	status.depositar(this, valor);
+	    }
 	
 }
