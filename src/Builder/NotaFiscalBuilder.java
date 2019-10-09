@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import observer.AcaoAposGerarNota;
+
 public class NotaFiscalBuilder {
 
 	private String razaoSocial;
@@ -13,7 +15,15 @@ public class NotaFiscalBuilder {
 	private List<ItemDaNota> todosItens = new ArrayList<>();
 	private String observacoes;
 	private Calendar data;
+	private List<AcaoAposGerarNota> acaoAposGerarNotas;
 
+	public NotaFiscalBuilder() {
+		this.acaoAposGerarNotas = new ArrayList<AcaoAposGerarNota>();
+	}
+	
+	public void adicionar(AcaoAposGerarNota acao) {
+		acaoAposGerarNotas.add(acao);
+	}
 	public NotaFiscalBuilder  paraEmpresa(String razaoSocial) {
 		this.razaoSocial = razaoSocial;
 		return this;
@@ -45,7 +55,22 @@ public class NotaFiscalBuilder {
 		if(data == null) {
 			data = Calendar.getInstance();
 		}
-		return new NotaFiscal(razaoSocial, cnpj, data, valorTotal, impostos, todosItens, observacoes);
+		
+		NotaFiscal nf = new NotaFiscal(razaoSocial, cnpj, data, valorTotal, impostos, todosItens, observacoes);
+		
+		acaoAposGerarNotas.forEach(acao -> acao.executa(nf));
+		return nf;
+		
+	}
+
+
+	private void salvaNoBanco(NotaFiscal nf) {
+		System.out.println("nota salva no banco");
+	}
+
+	private void enviaPorEmail(NotaFiscal nf) {
+		System.out.println("nota enviada por email");
+		
 	}
 
 	
