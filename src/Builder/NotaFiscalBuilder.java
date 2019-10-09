@@ -36,12 +36,15 @@ public class NotaFiscalBuilder {
 		return this;
 	}
 
-	public NotaFiscalBuilder  naDataAtual() {
-		this.data = Calendar.getInstance();
+	private NotaFiscalBuilder  naData(Calendar calendar) {
+		this.data = calendar;
 		return this;
 	}
 
 	public NotaFiscal constroi() {
+		if(data == null) {
+			data = Calendar.getInstance();
+		}
 		return new NotaFiscal(razaoSocial, cnpj, data, valorTotal, impostos, todosItens, observacoes);
 	}
 

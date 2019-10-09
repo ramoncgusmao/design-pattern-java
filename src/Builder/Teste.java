@@ -1,5 +1,7 @@
 package Builder;
 
+import java.util.Calendar;
+
 public class Teste {
 
 	public static void main(String[] args) {
@@ -7,11 +9,10 @@ public class Teste {
 		 NotaFiscal nf = new NotaFiscalBuilder()
 				 .paraEmpresa("Caelum")
 				 .comCnpj("123.456.789/0001-10")
-	       		 .comItem(new ItemDaNota("item 1", 100.0))
-	       		 .comItem(new ItemDaNota("item 2", 200.0))
-	       		 .comItem(new ItemDaNota("item 3", 300.0))
+	       		 .comItem(new ItemDaNotaBuilder().comNome("item1").comValorDe(100.0).builder())
+	       		 .comItem(new ItemDaNotaBuilder().comNome("item 2").comValorDe(200.0).builder())
+	       		 .comItem(new ItemDaNotaBuilder().comNome("item 3").comValorDe(300.0).builder())
 	       		 .comObservacoes("entregar nf pessoalmente")
-	       		 .naDataAtual()
 	       		 .constroi();
 	        
 	        System.out.println(nf.toString());
